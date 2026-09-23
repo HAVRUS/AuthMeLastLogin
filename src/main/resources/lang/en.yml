@@ -1,0 +1,20 @@
+# All text players actually see in chat. '&' colour codes are supported.
+# Placeholders (%player%, %time%, %label%) must be kept somewhere in the
+# string, but you can reorder or drop them, and translate everything else.
+#
+# Console log lines (warnings, errors, startup messages) are NOT covered by
+# this file - those stay in English for the server admin.
+
+last-login:
+  header: "&6=== Last Login Times ==="
+  line: "&f%time%&7: &e%player%"
+  never: "&fnever logged in&7: &e%player%"
+
+command:
+  usage-show: "&cUsage: /%label% show"
+  usage-motd: "&cUsage: /%label% motd <enable|disable>"
+  usage-reload: "&cUsage: /%label% reload"
+  no-permission: "&cYou don't have permission to do that."
+  motd-enabled: "&aThe automatic login message is now &lenabled&r&a."
+  motd-disabled: "&cThe automatic login message is now &ldisabled&r&c."
+  reload-success: "&aConfiguration and language file reloaded."

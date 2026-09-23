@@ -1,0 +1,48 @@
+# Connection details for the MySQL database AuthMe uses.
+database:
+  host: localhost
+  port: 3306
+  database: authme
+  username: authme
+  password: "changeme"
+  # Table/column names as AuthMe 6.0.0 creates them by default.
+  # Adjust if you customized AuthMe's DataSource settings.
+  table: authme
+  username-column: username
+  lastlogin-column: lastlogin
+  # SSL mode for the MySQL connection. One of:
+  #   disable     - never use SSL
+  #   prefer      - try SSL, fall back to plain
+  #   require     - must use SSL, but don't verify the server certificate
+  #   verify-ca   - SSL + verify cert is signed by a trusted CA
+  #   verify-full - SSL + verify cert AND that it matches the hostname
+  # (Same values as before - the plugin maps these to MySQL Connector/J's
+  # own sslMode parameter internally.)
+  ssl-mode: disable
+
+# All in-game text (what players see in chat) is translatable. Set this to
+# the name of a file under this plugin's lang/ folder, without the .yml
+# extension. Bundled: "en" (English), "ru" (Russian). To add your own,
+# copy plugins/AuthMeLastLogin/lang/en.yml to e.g. lang/de.yml, translate
+# the values, and set language: de here.
+language: en
+
+message:
+  # Java DateTimeFormatter pattern.
+  date-pattern: "yyyy-MM-dd HH:mm:ss"
+  # 0 = no limit. Set to a positive number to only show the N most
+  # recently-active players (this list is now sent privately to the
+  # logging-in player only, not broadcast, but a huge list is still
+  # a lot of chat for one person to read).
+  limit: 0
+  # Seconds to wait after a player finishes logging in before sending
+  # them the list.
+  delay-seconds: 2
+
+# Whether the list is automatically sent after login. Toggled at runtime
+# via /authmelastonline motd <enable|disable> (or /amlo motd ...) - the
+# command updates this value and it's saved back to this file, so it
+# survives restarts. /authmelastonline show always works regardless of
+# this setting.
+motd:
+  enabled: true

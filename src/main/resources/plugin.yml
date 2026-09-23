@@ -1,0 +1,32 @@
+name: AuthMeLastLogin
+version: '1.0.0'
+main: com.havrus.authmelastlogin.AuthMeLastLogin
+api-version: '1.21'
+author: you
+description: Sends every registered player's AuthMe last-login time.
+depend: [AuthMe]
+# Not required for the permission checks to work (any Bukkit permission
+# plugin, including LuckPerms, hooks in regardless of load order) - this
+# just avoids a harmless "plugin not found" load-order warning, and lets
+# us use LuckPerms's own API for the permission checks when it's present.
+softdepend: [LuckPerms]
+
+commands:
+  authmelastlogin:
+    aliases: [amll]
+    description: Shows the AuthMe last-login list, or (admins) toggles the automatic login message.
+    usage: |
+      /<command> show - show the last-login list to yourself
+      /<command> motd <enable|disable> - toggle the automatic message sent after login
+      /<command> reload - reload config.yml and the active language file
+
+permissions:
+  authmelastlogin.command.show:
+    description: Allows viewing the last-login list via /authmelastlogin show
+    default: true
+  authmelastlogin.command.motd:
+    description: Allows toggling the automatic login message via /authmelastlogin motd <enable|disable>
+    default: op
+  authmelastlogin.command.reload:
+    description: Allows reloading config.yml and the language file via /authmelastlogin reload
+    default: op
