@@ -97,7 +97,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.mysql</pattern>
-                                    <shadedPattern>com.example.authmelastlogin.libs.mysql</shadedPattern>
+                                    <shadedPattern>com.havrus.authmelastlogin.libs.mysql</shadedPattern>
                                 </relocation>
                             </relocations>
                             <filters>
